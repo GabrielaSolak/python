@@ -57,7 +57,10 @@ class Wyraz:
         for el in self.wyraz:
             if el == self.litera:
                 print("Tak")
+    def __str__(self):
+        return f"wyraz {self.wyraz}, litera {self.litera}"
 
 wyraz1 = Wyraz('tekst', 'e')
 
 wyraz1.czyWyrazMaLitere()
+print(wyraz1)
