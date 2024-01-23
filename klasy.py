@@ -26,3 +26,25 @@ class Ksiazka:
     def tekst(self):
         print(f"Autorem ksia")
     
+class Ulamek:
+    def __init__(self, l, m):
+        self.licznik = l
+        if m == 0:
+            self.mianownik = 1
+        else:
+            self.mianownik = m
+
+    def wypisz(self):
+        print(f"Licznik -> {self.licznik} \nMianownik -> {self.mianownik}")
+
+    def __str__(self):
+        return f"Licznik -> {self.licznik} \nMianownik -> {self.mianownik}"   
+
+l1 = Ulamek(2, 3)
+l2 = Ulamek(4, 0)
+
+l1.wypisz()
+l2.wypisz()
+
+print(l1)
+print(l2)
