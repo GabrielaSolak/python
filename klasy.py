@@ -48,3 +48,16 @@ l2.wypisz()
 
 print(l1)
 print(l2)
+
+class Wyraz:
+    def __init__(self, w, l):
+        self.wyraz = w
+        self.litera = l
+    def czyWyrazMaLitere(self):
+        for el in self.wyraz:
+            if el == self.litera:
+                print("Tak")
+
+wyraz1 = Wyraz('tekst', 'e')
+
+wyraz1.czyWyrazMaLitere()
