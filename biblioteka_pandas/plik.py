@@ -13,16 +13,14 @@ df = pd.DataFrame(dane)
 print(df[df['Płeć']=="M"])
 print(df[df['Nazwisko']=="Baranowski"])
 
+#ile srednio zarabiają kobiety
 
-"""
-for _ in df:
-    if df[["Płeć"]].to_string == "M":
-        print(df[["Płeć"]])
+pln = []
+for el in df['Zarobki']:
+    pln.append(float((el[:-4]).replace(" ", "")))
 
+df['pln'] = pln
+del df['Zarobki']
 
-"""
-
-
-
-
-
+df['usd'] = df['pln']/3.98
+print(df[['usd','pln']][df['usd']>2000].mean())
