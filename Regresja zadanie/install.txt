@@ -1,0 +1,7 @@
+
+Wymagane biblioteki:
+- pandas (pip install pandas)
+- sklearn (pip install scikit-learn)
+- matplotlib (pip install matplotlib)
+- numpy (pip install numpy)
+- seaborn (pip install seaborn)
