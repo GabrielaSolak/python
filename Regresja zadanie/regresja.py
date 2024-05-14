@@ -36,15 +36,13 @@ print(dane.head(5))
 
 
 
-#X = np.array(dane[["Gender","Age","EstimatedSalary"]])
-#y = np.array(dane["y"])
+X = np.array(dane[["Gender","Age","EstimatedSalary"]])
+y = np.array(dane["wynik"])
 
-#X_treningowe, x_testowe, y_treningowe, y_testowe = train_test_split(X,y,test_size=0.3)
+X_treningowe, X_testowe, y_treningowe, y_testowe = train_test_split(X,y,test_size=0.3)
 
 
 #---------5----------
-
-
 zarobki = dane.groupby('Gender').agg(srednia=('EstimatedSalary','mean'))
 zarobki.reset_index(inplace=True) 
 
@@ -54,6 +52,10 @@ plt.show()
 zarobki_wiek = dane.groupby('Age').agg(srednia=('EstimatedSalary','mean'))
 zarobki_wiek.reset_index(inplace=True)
 
-plt.bar(zarobki["srednia"],zarobki["EstimatedSalary"])
+plt.bar(zarobki_wiek["Age"],zarobki_wiek["srednia"])
 plt.show()
 
+#---------------10------------
+model = LogisticRegression()
+model.fit(X_treningowe, y_treningowe)
+y_przewidywane = model.predict(X_testowe)
